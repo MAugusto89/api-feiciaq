@@ -2,16 +2,16 @@ API da Feiciaq
 
 Trabalho:
 
-- título (string)
-- autores (autor[])
-- área (area)
-- código (string - pk)
+- título (string - não vazia)
+- autores (autor[] , entre 2 e 7)
+- área (area , obrigatória : CET , CHCSA , CBS , CAE , MDIS )
+- código (string - pk, obrigatório seguido pelo código da área seguido por 2 dígitos)
 
 Autor:
 
-- nome (string)
-- genero (string)
-- cpf (string - pk)
+- nome (obrigatório , string, deve conter nome e sobrenome)
+- genero (obrigatório , string , M ou F)
+- cpf (obrigatório , string - pk , 11 digitos sem máscara)
 
 Área\*:
 

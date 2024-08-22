@@ -1,0 +1,12 @@
+{
+  "titulo": "Desenvolvimento das asas da borboleta",
+  "area": "CBS",
+  "codigo": "CBS01",
+  "autores": [
+    {
+      "nome": "Jéssica",
+      "genero": "F",
+      "cpf": "99999999999"
+    }
+  ]
+}
