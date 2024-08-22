@@ -79,7 +79,7 @@ describe("Testes sobre o endpoint /trabalhos", () => {
       expect(res.status).to.equal(400);
       const { menssagensDeErro } = res.body;
       expect(menssagensDeErro[0]).to.equal(
-        "O Nome do autor não pode estar vazio.",
+        "O Nome do autor não pode estar vazio e deve conter Nome e Sobrenome.",
       );
     });
   });
@@ -96,7 +96,9 @@ describe("Testes sobre o endpoint /trabalhos", () => {
     cy.request(requestOptions).then((res) => {
       expect(res.status).to.equal(400);
       const { menssagensDeErro } = res.body;
-      expect(menssagensDeErro[0]).to.equal("O CPF do autor não é válido.");
+      expect(menssagensDeErro[0]).to.equal(
+        "O CPF do autor não é válido e deve conter 11 dígitos sem máscara.",
+      );
     });
   });
   test("Não deve salvar trabalho com área inválida", () => {
@@ -104,7 +106,9 @@ describe("Testes sobre o endpoint /trabalhos", () => {
     cy.request(requestOptions).then((res) => {
       expect(res.status).to.equal(400);
       const { menssagensDeErro } = res.body;
-      expect(menssagensDeErro[0]).to.equal("A Área do trabalho não é válida.");
+      expect(menssagensDeErro[0]).to.equal(
+        "A Área do trabalho não é válida, deve estar entre as opções: CET, CHCSA, CBS, CAE, MDIS.",
+      );
     });
   });
 });
